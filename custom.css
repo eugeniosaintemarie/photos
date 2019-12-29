@@ -1,1 +1,3 @@
-/* Your custom styles goes here */
+body {background-color: black !important;}
+h1, h1 a, .breadcrumbs, .breadcrumb-item {color: #f8f8f8 !important;}
+.date, .lg-download .lg-icon, .lg-icon .lg-info {display: none !important;}
