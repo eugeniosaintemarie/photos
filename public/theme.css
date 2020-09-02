@@ -127,7 +127,17 @@ nav.breadcrumbs {
     height: 190px;
   }
 }
-body {background-color: black !important;}
-h1, h1 a, .breadcrumbs, .breadcrumb-item {color: #f8f8f8 !important;}
-.date, .lg-download .lg-icon, .lg-icon .lg-info {display: none !important;}
+body {
+  background-color: black !important;
+}
+h1, h1 a, .breadcrumbs, .breadcrumb-item {
+  color: #f8f8f8 !important;
+}
+.date, .lg-download .lg-icon, .lg-icon .lg-info {
+  display: none !important;
+}
+#albums a {
+  margin-right: 1em !important;
+  height: 200px !important;
+}
 
