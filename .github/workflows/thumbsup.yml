@@ -1,0 +1,34 @@
+name: Thumbsup Build and Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install dependencies and build
+      run: |
+        sudo add-apt-repository -y ppa:rwky/graphicsmagick
+        sudo add-apt-repository -y ppa:mc3man/trusty-media
+        sudo apt-get -y update
+        sudo apt-get install -y libimage-exiftool-perl
+        sudo apt-get -y install python-software-properties
+        sudo apt-get -y install software-properties-common
+        sudo apt-get -y install ffmpeg
+        sudo apt-get -y install graphicsmagick
+        sudo apt-get -y install gifsicle
+        npm install -g thumbsup
+        thumbsup --config config.json
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build_output
