@@ -8,6 +8,6 @@
   "cleanup": true,
   "theme": "cards",
   "theme-style": "./custom.css",
-  "footer": "",
+  "footer": "∃ camera © 2024",
   "usage-stats": false
 }
