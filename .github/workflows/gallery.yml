@@ -22,8 +22,6 @@ jobs:
           persist-credentials: false
       - name: Build Gallery 🔧
         run: docker run -v "$(pwd):/work" ghcr.io/thumbsup/thumbsup /bin/sh -c "cd /work/ && thumbsup --config config.json"
-      - name: Clean title tag 🏷️
-        run: sed -i 's/ - Home<\/title>/<\/title>/g' build_output/index.html
       - name: Package and upload artifact 📦
         uses: actions/upload-pages-artifact@v3
         with:
